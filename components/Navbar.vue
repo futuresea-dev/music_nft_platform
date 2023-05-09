@@ -11,8 +11,4 @@ export default {
   name: "Navar",
 };
 </script>
-<style>
-.nuxt-logo {
-  height: 180px;
-}
-</style>
+<style></style>

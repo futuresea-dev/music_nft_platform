@@ -31,7 +31,7 @@
       <v-list flat subheader three-line>
         <v-subheader>UPCOMING</v-subheader>
 
-        <v-list-item-group v-model="settings" multiple active-class="">
+        <v-list-item-group active-class="">
           <v-list-item style="min-height: 0px">
             <v-list-item-action>
               <v-img
@@ -92,7 +92,7 @@
       <v-list flat subheader three-line>
         <v-subheader>LIBRARY</v-subheader>
 
-        <v-list-item-group v-model="settings" multiple active-class="">
+        <v-list-item-group active-class="">
           <v-list-item style="min-height: 0px">
             <v-list-item-icon>
               <v-icon v-text="'mdi-music'"></v-icon>
@@ -121,9 +121,9 @@
       </v-list>
     </v-navigation-drawer>
     <v-main>
-      <v-container>
+      <v-flex>
         <Nuxt />
-      </v-container>
+      </v-flex>
     </v-main>
   </v-app>
 </template>
