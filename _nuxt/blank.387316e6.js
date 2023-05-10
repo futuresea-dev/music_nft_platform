@@ -1,0 +1,1 @@
+import{q as a,c as o,w as t,b as n,o as s,e as p,u as r,R as c}from"./entry.81bca5bf.js";const f=a({__name:"blank",setup(_){return(u,l)=>{const e=n("v-app");return s(),o(e,null,{default:t(()=>[p(r(c))]),_:1})}}});export{f as default};
