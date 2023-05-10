@@ -2,9 +2,7 @@
 import { RouterView } from "vue-router";
 import Logo from "~/components/Logo.vue";
 import musicAvatar from "/img/music-avatar.jpg";
-const title = ref(
-  "Modernize - Nuxt3 Typescript based Free Admin Dashboard Template"
-);
+const title = ref("Bitsong - Nuxt3 Typescript based Vuetify");
 const clipped = ref(false);
 const drawer = ref(true);
 const miniVariant = ref(false);
