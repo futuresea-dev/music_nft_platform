@@ -2,9 +2,7 @@
 import { RouterView } from "vue-router";
 import Logo from "~/components/Logo.vue";
 import musicAvatar from "/img/music-avatar.jpg";
-const title = ref(
-  "Modernize - Nuxt3 Typescript based Free Admin Dashboard Template"
-);
+const title = ref("Bitsong - Nuxt3 Typescript based Vuetify");
 const clipped = ref(false);
 const drawer = ref(true);
 const miniVariant = ref(false);
@@ -66,7 +64,7 @@ useHead({
         </v-list>
 
         <v-divider></v-divider>
-        <v-list flat subheader three-line>
+        <v-list variant="flat" subheader lines="two">
           <v-list-subheader>UPCOMING</v-list-subheader>
 
           <v-list-item style="min-height: 0px">
@@ -128,7 +126,7 @@ useHead({
         </v-list>
 
         <v-divider></v-divider>
-        <v-list flat subheader three-line>
+        <v-list variant="flat" subheader lines="two">
           <v-list-subheader>LIBRARY</v-list-subheader>
 
           <v-list-item style="min-height: 0px">
@@ -153,10 +151,8 @@ useHead({
       </v-navigation-drawer>
 
       <v-main>
-        <div class="page-wrapper">
-          <div class="maxWidth">
-            <RouterView />
-          </div>
+        <div>
+          <RouterView />
         </div>
       </v-main>
     </v-app>

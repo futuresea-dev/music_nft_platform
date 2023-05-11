@@ -15,6 +15,11 @@ import Footer from "~/components/layouts/Footer.vue";
       <UpcomingDrops></UpcomingDrops>
       <TopCollectors></TopCollectors>
       <RecentDrops></RecentDrops>
+      <v-spacer class="text-center">
+        <v-btn elevation="2" height="48" width="200" variant="outlined"
+          >See All</v-btn
+        >
+      </v-spacer>
     </v-layout>
     <Footer></Footer>
   </div>

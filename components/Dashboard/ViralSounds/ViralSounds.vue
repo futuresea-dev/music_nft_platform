@@ -3,7 +3,7 @@ import Title from "~/components/Dashboard/Title.vue";
 import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
 </script>
 <template>
-  <v-container>
+  <v-container class="c-container">
     <Title
       text="Viral Sounds This Week"
       icon="mdi-camera"
