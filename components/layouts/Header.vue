@@ -24,10 +24,6 @@
 </template>
 
 <style scoped>
-.c-container {
-  padding-top: 50px;
-}
-
 .c-search-input {
   margin-right: 20px;
 }
@@ -48,5 +44,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+</style>
+
+<style>
+.c-container {
+  max-width: 1200px;
+  padding-top: 50px;
 }
 </style>

@@ -8,7 +8,7 @@ const images = [image1, image2, image3, image4];
 </script>
 
 <template>
-  <v-container>
+  <v-container class="c-container">
     <v-carousel
       cycle
       height="400"

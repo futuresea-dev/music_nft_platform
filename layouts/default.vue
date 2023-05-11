@@ -64,7 +64,7 @@ useHead({
         </v-list>
 
         <v-divider></v-divider>
-        <v-list flat subheader three-line>
+        <v-list variant="flat" subheader lines="two">
           <v-list-subheader>UPCOMING</v-list-subheader>
 
           <v-list-item style="min-height: 0px">
@@ -126,7 +126,7 @@ useHead({
         </v-list>
 
         <v-divider></v-divider>
-        <v-list flat subheader three-line>
+        <v-list variant="flat" subheader lines="two">
           <v-list-subheader>LIBRARY</v-list-subheader>
 
           <v-list-item style="min-height: 0px">
@@ -151,10 +151,8 @@ useHead({
       </v-navigation-drawer>
 
       <v-main>
-        <div class="page-wrapper">
-          <div class="maxWidth">
-            <RouterView />
-          </div>
+        <div>
+          <RouterView />
         </div>
       </v-main>
     </v-app>
