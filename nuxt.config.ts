@@ -18,4 +18,8 @@ export default defineNuxtConfig({
   devServerHandlers: [],
   hooks: {},
   rootDir: __dirname,
+  target: 'static',
+  router: {
+      base: '/music_nft_platform/'
+   },
 });
