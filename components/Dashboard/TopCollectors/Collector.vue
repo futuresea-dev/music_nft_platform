@@ -54,7 +54,7 @@ const propsData = defineProps({
 </template>
 <style>
 .c-collector:hover {
-  background-color: #f5f5f5;
+  background-color: rgba(var(--v-theme-surface));
   border-radius: 10px;
   cursor: pointer;
 }
@@ -67,7 +67,7 @@ const propsData = defineProps({
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: #262626;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
 }
 .c-small-text {
   font-size: 14px;

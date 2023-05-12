@@ -84,7 +84,6 @@ const items = ref([
 <style scoped>
 .c-card {
   background-color: black;
-  color: white;
   border-radius: 10px;
   width: 270px;
   margin: 0px 10px;

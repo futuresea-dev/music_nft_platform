@@ -18,8 +18,23 @@ export default defineNuxtConfig({
   devServerHandlers: [],
   hooks: {},
   rootDir: __dirname,
-  target: 'static',
+  target: "static",
   router: {
-      base: '/music_nft_platform/'
-   },
+    base: "/music_nft_platform/",
+  },
+  modules: [
+    "@pinia-plugin-persistedstate/nuxt",
+    [
+      "@pinia/nuxt",
+      {
+        autoImports: [
+          // automatically imports `defineStore`
+          "defineStore", // import { defineStore } from 'pinia'
+          // automatically imports `defineStore` as `definePiniaStore`
+          ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
+        ],
+      },
+    ],
+    "@vueuse/nuxt",
+  ],
 });

@@ -1,8 +1,15 @@
-<script setup></script>
+<script setup>
+import WalletBtn from "../Button/WalletBtn.vue";
+
+import { storeToRefs } from "pinia";
+import useWalletStore from "~~/store/wallet";
+
+const { isLoggedIn } = storeToRefs(useWalletStore());
+</script>
 
 <template>
   <v-container class="c-container">
-    <div class="d-flex">
+    <div class="d-flex align-center">
       <v-autocomplete
         label="Search for anything on Sound"
         prepend-inner-icon="mdi-magnify"
@@ -18,7 +25,7 @@
         variant="solo"
         append-inner-icon=""
       ></v-autocomplete>
-      <v-btn elevation="2" height="55">Sign In</v-btn>
+      <wallet-btn></wallet-btn>
     </div>
   </v-container>
 </template>
@@ -27,7 +34,9 @@
 .c-search-input {
   margin-right: 20px;
 }
-
+.c-search-input :deep(.v-input__details) {
+  display: none;
+}
 .c-search-input :deep(.v-field-label--floating) {
   display: none;
 }

@@ -68,7 +68,7 @@ const items = ref([
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
-  color: #262626;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
 }
 .c-small-text {
   font-size: 14px;

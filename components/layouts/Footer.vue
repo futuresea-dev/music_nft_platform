@@ -1,5 +1,5 @@
 <script setup>
-import Logo from "/img/logo.png";
+import Logo from "/logo+typo.svg";
 </script>
 <template>
   <v-layout class="c-footer">
@@ -45,17 +45,15 @@ import Logo from "/img/logo.png";
   width: 100%;
   padding: 50px 30px;
   margin-top: 20px;
-  background-color: rgb(247 247 247);
+  background-color: rgb(var(--v-theme-surface));
 }
 .c-header-text {
-  color: rgb(31 31 31 / 1);
   font-size: 15px;
   line-height: 18px;
   font-weight: 500;
   margin: 10px 0px;
 }
 .c-body-text {
-  color: rgb(31 31 31 / 0.8);
   font-size: 15px;
   line-height: 18px;
   margin: 10px 0px;

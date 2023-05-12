@@ -27,6 +27,7 @@ const model = ref(null);
 .c-upcoming-sliders :deep(.v-slide-group__prev) {
   position: absolute;
   background: white;
+  color: black;
   z-index: 100;
   min-width: 50px;
   min-height: 50px;
@@ -41,6 +42,7 @@ const model = ref(null);
 .c-upcoming-sliders :deep(.v-slide-group__next) {
   position: absolute;
   background: white;
+  color: black;
   z-index: 100;
   min-width: 50px;
   min-height: 50px;

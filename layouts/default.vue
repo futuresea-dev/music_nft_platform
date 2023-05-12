@@ -2,6 +2,7 @@
 import { RouterView } from "vue-router";
 import Logo from "~/components/Logo.vue";
 import musicAvatar from "/img/music-avatar.jpg";
+
 const title = ref("Bitsong - Nuxt3 Typescript based Vuetify");
 const clipped = ref(false);
 const drawer = ref(true);
@@ -26,11 +27,8 @@ const items = ref([
 
 useHead({
   meta: [{ content: title }],
-  titleTemplate: (titleChunk) => {
-    return titleChunk
-      ? `${titleChunk} - Nuxt3 Typescript based Free Admin Dashboard Template`
-      : "Modernize - Nuxt3 Typescript based Free Admin Dashboard Template";
-  },
+  title: "Bitsong",
+  link: [{ rel: "icon", type: "image/x-icon", href: "/bitsong.svg" }],
 });
 </script>
 
