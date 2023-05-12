@@ -28,7 +28,7 @@
     "sass": "^1.62.1",
     "typescript": "^5.0.4",
     "vite-plugin-vuetify": "^1.0.2",
-    "vue-toastification": "^1.7.14",
+    "vue-toastification": "^2.0.0-rc.5",
     "vuetify": "^3.2.2"
   }
 }

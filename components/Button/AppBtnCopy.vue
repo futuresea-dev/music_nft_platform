@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { useClipboard } from "@vueuse/core";
-import useToast from "vue-toastification";
+import { useToast } from "vue-toastification";
 
 const { success } = useToast();
 const { copy, copied } = useClipboard();
