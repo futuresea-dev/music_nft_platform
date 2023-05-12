@@ -11,16 +11,16 @@
 
 <script lang="ts" setup>
 import { useClipboard } from "@vueuse/core";
-import { useToast } from "vue-toastification";
+// import { useToast } from "vue-toastification";
 
-const { success } = useToast();
+// const { success } = useToast();
 const { copy, copied } = useClipboard();
 
 defineProps<{
   text: string;
 }>();
 
-watchEffect(() => {
-  if (copied.value) success("Copied to clipboard");
-});
+// watchEffect(() => {
+//   if (copied.value) success("Copied to clipboard");
+// });
 </script>
