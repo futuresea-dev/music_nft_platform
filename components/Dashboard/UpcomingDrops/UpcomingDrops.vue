@@ -1,6 +1,57 @@
 <script setup>
 import Title from "~/components/Dashboard/Title.vue";
 import UpcomingCard from "~/components/Dashboard/UpcomingDrops/UpcomingCard.vue";
+const upcomingData = [
+  {
+    creator: "Dessauer",
+    musicname: "It Fuzzes And Condensates",
+    time: "Starts tomorrow, 12:00 AM",
+    musiclink: "/it-fuzzes-and-condensates",
+    creatorlink: "/dessauer",
+  },
+  {
+    creator: "billings",
+    musicname: "all right",
+    time: "Starts tomorrow, 6:00 AM",
+    musiclink: "/all-right",
+    creatorlink: "/billings",
+  },
+  {
+    creator: "bloody white",
+    musicname: "wonderboy",
+    time: "Starts tomorrow, 7:00 AM",
+    musiclink: "/wonderboy",
+    creatorlink: "/bloody-white",
+  },
+  {
+    creator: "Sara Phillips",
+    musicname: "everybody knows",
+    time: "Starts May 17, 2:00 AM",
+    musiclink: "/everybody-knows",
+    creatorlink: "/sara-phillips",
+  },
+  {
+    creator: "Trooko",
+    musicname: "Ritmo Sabor",
+    time: "Starts May 17, 4:00 AM",
+    musiclink: "/ritmo-sabor",
+    creatorlink: "/trooko",
+  },
+  {
+    creator: "acutek",
+    musicname: "Combat Conditions",
+    time: "Starts May 17, 5:00 AM",
+    musiclink: "/combat-conditions",
+    creatorlink: "/acutek",
+  },
+  {
+    creator: "DANC3",
+    musicname: "DANC3Mixtape (CRAZY)",
+    time: "Starts May 17, 8:40 AM",
+    musiclink: "/danc3-mixtape-crazy",
+    creatorlink: "/danc3",
+  },
+];
 const model = ref(null);
 </script>
 
@@ -9,11 +60,17 @@ const model = ref(null);
     <Title text="Upcoming Drops" seeAllLink="/upcoming"></Title>
     <v-slide-group v-model="model" show-arrows class="c-upcoming-sliders">
       <v-slide-group-item
-        v-for="n in 6"
-        :key="n"
+        v-for="(item, index) in upcomingData"
+        :key="index"
         v-slot="{ isSelected, toggle, selectedClass }"
       >
-        <UpcomingCard></UpcomingCard>
+        <UpcomingCard
+          :creator="item.creator"
+          :musicname="item.musicname"
+          :time="item.time"
+          :musiclink="item.musiclink"
+          :creatorlink="item.creatorlink"
+        ></UpcomingCard>
       </v-slide-group-item>
     </v-slide-group>
   </v-container>

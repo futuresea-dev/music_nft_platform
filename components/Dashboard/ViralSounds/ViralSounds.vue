@@ -14,6 +14,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
         <MusicList
           creator="angelbaby"
           title="im fine : ( : [Feat. GrimesAI"
+          musiclink="/im-fine-feat-grimesai-x-wesghost"
           mints="3,812"
         />
       </v-col>
@@ -21,14 +22,25 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
         <MusicList
           creator="NOISE"
           title="Dadabots - RUG THE BOTS"
+          musiclink="/im-fine-feat-grimesai-x-wesghost"
           mints="146"
         />
       </v-col>
       <v-col sm="6">
-        <MusicList creator="Josh Savage" title="Bella" mints="362" />
+        <MusicList
+          creator="Josh Savage"
+          title="Bella"
+          musiclink="/im-fine-feat-grimesai-x-wesghost"
+          mints="362"
+        />
       </v-col>
       <v-col sm="6">
-        <MusicList creator="demotapes" title="hold on" mints="25" />
+        <MusicList
+          creator="demotapes"
+          title="hold on"
+          musiclink="/im-fine-feat-grimesai-x-wesghost"
+          mints="25"
+        />
       </v-col>
     </v-row>
   </v-container>

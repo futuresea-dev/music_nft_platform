@@ -1,6 +1,5 @@
-<script setup>
+<script setup lang="ts">
 import musicLogo from "/img/music-logo.jpg";
-
 const props = defineProps({
   creator: {
     type: String,
@@ -9,6 +8,10 @@ const props = defineProps({
   title: {
     type: String,
     required: false,
+  },
+  musiclink: {
+    type: String,
+    required: true,
   },
   mints: {
     type: String,
@@ -22,6 +25,14 @@ const items = ref([
   { title: "Copy Link", icon: "mdi-content-copy" },
   { title: "Share", icon: "mdi-export-variant" },
 ]);
+
+const creatorNavigate = (creator: string) => {
+  navigateTo("/" + creator);
+};
+
+const musicNavigate = (creator: string, musiclink: string) => {
+  navigateTo("/" + creator + musiclink);
+};
 </script>
 
 <template>
@@ -32,8 +43,18 @@ const items = ref([
           <img :src="musicLogo" class="c-avatar" />
         </div>
         <div>
-          <div class="c-small-text">{{ props.creator }}</div>
-          <div class="c-title-text">{{ props.title }}</div>
+          <div
+            class="c-small-text"
+            @click.stop="creatorNavigate(props.creator)"
+          >
+            {{ props.creator }}
+          </div>
+          <div
+            class="c-title-text"
+            @click.stop="musicNavigate(props.creator, props.musiclink)"
+          >
+            {{ props.title }}
+          </div>
           <div class="c-small-text">{{ props.mints }} mints</div>
         </div>
       </v-layout>
@@ -69,10 +90,12 @@ const items = ref([
   font-size: 18px;
   line-height: 22px;
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
+  cursor: pointer;
 }
 .c-small-text {
   font-size: 14px;
   line-height: 18px;
   color: #737373;
+  cursor: pointer;
 }
 </style>

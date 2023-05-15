@@ -5,6 +5,30 @@ const items = ref([
   { title: "Add to queue", icon: "mdi-playlist-plus" },
   { title: "Share", icon: "mdi-export-variant" },
 ]);
+const upcomingProps = defineProps({
+  creator: {
+    type: String,
+  },
+  musicname: {
+    type: String,
+  },
+  time: {
+    type: String,
+  },
+  musiclink: {
+    type: String,
+  },
+  creatorlink: {
+    type: String,
+  },
+});
+const creatorNavigate = (creator) => {
+  navigateTo(creator);
+};
+
+const musicNavigate = (creator, musiclink) => {
+  navigateTo(creator + musiclink);
+};
 </script>
 <template>
   <div>
@@ -18,7 +42,7 @@ const items = ref([
             inline
           ></v-badge>
           <v-sheet>
-            <NuxtLink to="/groggyjones/jump-ship">
+            <NuxtLink :to="upcomingProps.creatorlink + upcomingProps.musiclink">
               <img :src="upcomingImg" alt="Upcoming" class="c-upcoming-img" />
             </NuxtLink>
           </v-sheet>
@@ -34,8 +58,21 @@ const items = ref([
         </div>
         <div class="d-flex justify-space-between">
           <div>
-            <v-card-subtitle> Groggy Jones </v-card-subtitle>
-            <v-card-title>Jump Ship</v-card-title>
+            <v-card-subtitle
+              @click.stop="creatorNavigate(upcomingProps.creatorlink)"
+            >
+              {{ upcomingProps.creator }}
+            </v-card-subtitle>
+            <v-card-title
+              class="c-upcoming-title"
+              @click.stop="
+                musicNavigate(
+                  upcomingProps.creatorlink,
+                  upcomingProps.musiclink
+                )
+              "
+              >{{ upcomingProps.musicname }}</v-card-title
+            >
           </div>
           <v-layout class="justify-end" v-if="isHovering">
             <v-menu>
@@ -124,7 +161,9 @@ const items = ref([
   object-fit: cover; /* Make the image cover the entire container */
   object-position: center;
 }
-
+.c-upcoming-title {
+  width: 180px;
+}
 .show-none {
   display: none;
 }
