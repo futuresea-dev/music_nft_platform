@@ -13,6 +13,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  creatorlink: {
+    type: String,
+    required: true,
+  },
   mints: {
     type: String,
     required: false,
@@ -26,12 +30,12 @@ const items = ref([
   { title: "Share", icon: "mdi-export-variant" },
 ]);
 
-const creatorNavigate = (creator: string) => {
-  navigateTo("/" + creator);
+const creatorNavigate = (creatorlink: string) => {
+  navigateTo("/user" + creatorlink);
 };
 
-const musicNavigate = (creator: string, musiclink: string) => {
-  navigateTo("/" + creator + musiclink);
+const musicNavigate = (creatorlink: string, musiclink: string) => {
+  navigateTo("/" + creatorlink + musiclink);
 };
 </script>
 
@@ -45,13 +49,13 @@ const musicNavigate = (creator: string, musiclink: string) => {
         <div>
           <div
             class="c-small-text"
-            @click.stop="creatorNavigate(props.creator)"
+            @click.stop="creatorNavigate(props.creatorlink)"
           >
             {{ props.creator }}
           </div>
           <div
             class="c-title-text"
-            @click.stop="musicNavigate(props.creator, props.musiclink)"
+            @click.stop="musicNavigate(props.creatorlink, props.musiclink)"
           >
             {{ props.title }}
           </div>

@@ -1,13 +1,15 @@
 <script setup>
+import Footer from "~/components/layouts/Footer.vue";
 const tab = ref(null);
 const items = [
   { title: "Add to playlist", icon: "mdi-playlist-music" },
   { title: "Add to queue", icon: "mdi-playlist-plus" },
 ];
+const headerImgUrl = "/img/music-detail.jpg";
 </script>
 <template>
   <div>
-    <music-detail-header></music-detail-header>
+    <layouts-music-header :headerImgUrl="headerImgUrl"></layouts-music-header>
     <v-layout class="justify-center">
       <v-layout class="c-detail-content">
         <div class="c-detail-left-side">
@@ -53,6 +55,7 @@ const items = [
         <modal-buy-modal></modal-buy-modal>
       </v-layout>
     </v-layout>
+    <Footer></Footer>
   </div>
 </template>
 <style scoped>

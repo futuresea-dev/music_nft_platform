@@ -7,6 +7,10 @@ const propsData = defineProps({
   name: {
     type: String,
   },
+  link: {
+    type: String,
+    required: true,
+  },
   addr: {
     type: String,
   },
@@ -23,6 +27,9 @@ const propsData = defineProps({
     type: Number,
   },
 });
+const navigateCreator = (creator) => {
+  navigateTo("/user" + creator);
+};
 </script>
 <template>
   <v-container>
@@ -34,7 +41,12 @@ const propsData = defineProps({
               <img :src="propsData.img" class="c-avatar" alt="avatar" />
             </div>
             <div>
-              <div class="c-title-text">{{ propsData.name }}</div>
+              <div
+                class="c-title-text"
+                @click.stop="navigateCreator(propsData.link)"
+              >
+                {{ propsData.name }}
+              </div>
               <div class="c-small-text">{{ propsData.mints }}K mints</div>
             </div>
           </v-layout>

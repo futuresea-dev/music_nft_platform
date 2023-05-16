@@ -11,6 +11,7 @@ const data = ref([
     collected: 2.5,
     following: 7,
     followers: 8,
+    link: "/camel-lightmode",
   },
   {
     img: musicLogo,
@@ -20,6 +21,7 @@ const data = ref([
     collected: 113,
     following: 11,
     followers: 1,
+    link: "/0x503...b8dd",
   },
   {
     img: musicLogo,
@@ -29,6 +31,7 @@ const data = ref([
     collected: 377,
     following: 7,
     followers: 1,
+    link: "/noisealt.eth",
   },
 ]);
 </script>
@@ -48,6 +51,7 @@ const data = ref([
           :collected="item.collected"
           :following="item.following"
           :followers="item.followers"
+          :link="item.link"
         ></Collector>
       </v-col>
     </v-row>

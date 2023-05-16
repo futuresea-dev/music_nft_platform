@@ -1,11 +1,39 @@
 <script setup>
-import recentImg from "/img/recent.jpg";
-import avatarImg from "/img/avatar.jpg";
 const items = ref([
   { title: "Add to playlist", icon: "mdi-playlist-music" },
   { title: "Add to queue", icon: "mdi-playlist-plus" },
   { title: "Share", icon: "mdi-export-variant" },
 ]);
+const recentProps = defineProps({
+  img: {
+    type: String,
+  },
+  creator: {
+    type: String,
+  },
+  musicname: {
+    type: String,
+  },
+  time: {
+    type: String,
+  },
+  musiclink: {
+    type: String,
+  },
+  creatorlink: {
+    type: String,
+  },
+  mintedbyuser: {
+    type: Array,
+  },
+});
+const creatorNavigate = (creator) => {
+  navigateTo("/user" + creator);
+};
+
+const musicNavigate = (creator, musiclink) => {
+  navigateTo(creator + musiclink);
+};
 </script>
 <template>
   <div>
@@ -20,7 +48,7 @@ const items = ref([
           ></v-badge>
           <v-sheet>
             <NuxtLink to="/groggyjones/jump-ship">
-              <img :src="recentImg" alt="recent" class="c-recent-img" />
+              <img :src="recentProps.img" alt="recent" class="c-recent-img" />
             </NuxtLink>
           </v-sheet>
           <div class="c-gradient"></div>
@@ -35,8 +63,16 @@ const items = ref([
         </div>
         <div class="d-flex justify-space-between">
           <div>
-            <v-card-subtitle> Groggy Jones </v-card-subtitle>
-            <v-card-title>Jump Ship</v-card-title>
+            <v-card-subtitle
+              @click.stop="creatorNavigate(recentProps.creatorlink)"
+            >
+              {{ recentProps.creator }}
+            </v-card-subtitle>
+            <v-card-title
+              @click.stop="musicNavigate(recentProps.musiclink)"
+              class="c-recent-card-title"
+              >{{ recentProps.musicname }}</v-card-title
+            >
           </div>
           <v-layout class="justify-end" v-if="isHovering">
             <v-menu>
@@ -71,9 +107,13 @@ const items = ref([
         </div>
         <v-card-actions>
           <div class="c-avatar">
-            <img :src="avatarImg" alt="avatar" class="c-avatar-img" />
+            <img
+              :src="recentProps.mintedbyuser[0].img"
+              alt="avatar"
+              class="c-avatar-img"
+            />
           </div>
-          <div class="c-desc">parrott minted</div>
+          <div class="c-desc">{{ recentProps.mintedbyuser[0].name }}</div>
         </v-card-actions>
       </v-card>
     </v-hover>
@@ -141,6 +181,9 @@ const items = ref([
   font-size: 11px;
   font-weight: 600;
   flex-wrap: wrap;
+}
+.c-recent-card-title {
+  width: 180px;
 }
 .show-none {
   display: none;

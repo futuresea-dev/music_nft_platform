@@ -1,12 +1,16 @@
 <script setup>
-const headerUrl = "/img/music-detail.jpg";
 const creator = "angelbaby";
 const mints = "5.6K";
+const props = defineProps({
+  headerImgUrl: {
+    type: String,
+  },
+});
 </script>
 <template>
   <div
     class="c-music-detail-header"
-    :style="`background-image: url(${headerUrl})`"
+    :style="`background-image: url(${headerImgUrl})`"
   >
     <div class="mask-content">
       <v-layout class="c-content">
@@ -20,7 +24,7 @@ const mints = "5.6K";
           </v-layout>
         </div>
         <div class="c-title-img">
-          <img :src="headerUrl" alt="title" />
+          <img :src="headerImgUrl" alt="title" />
         </div>
       </v-layout>
     </div>

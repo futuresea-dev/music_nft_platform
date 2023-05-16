@@ -15,6 +15,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
           creator="angelbaby"
           title="im fine : ( : [Feat. GrimesAI"
           musiclink="/im-fine-feat-grimesai-x-wesghost"
+          creatorlink="/angelbaby"
           mints="3,812"
         />
       </v-col>
@@ -23,6 +24,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
           creator="NOISE"
           title="Dadabots - RUG THE BOTS"
           musiclink="/im-fine-feat-grimesai-x-wesghost"
+          creatorlink="/noise"
           mints="146"
         />
       </v-col>
@@ -31,6 +33,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
           creator="Josh Savage"
           title="Bella"
           musiclink="/im-fine-feat-grimesai-x-wesghost"
+          creatorlink="/josh-savage"
           mints="362"
         />
       </v-col>
@@ -39,6 +42,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
           creator="demotapes"
           title="hold on"
           musiclink="/im-fine-feat-grimesai-x-wesghost"
+          creatorlink="/demotapes"
           mints="25"
         />
       </v-col>
