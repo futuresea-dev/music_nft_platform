@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import Logo from "~/components/Logo.vue";
-import musicAvatar from "/img/music-avatar.jpg";
 
 const title = ref("Bitsong - Nuxt3 Typescript based Vuetify");
 const clipped = ref(false);
 const drawer = ref(true);
 const miniVariant = ref(false);
-const items = ref([
+const items = [
   {
     icon: "mdi-home",
     title: "Home",
@@ -15,15 +14,50 @@ const items = ref([
   },
   {
     icon: "mdi-chart-bubble",
-    title: "Feed",
-    to: "/inspire",
+    title: "Search",
+    to: "/search",
   },
   {
-    icon: "mdi-chart-bar",
-    title: "Charts",
-    to: "/chart",
+    icon: "mdi-cart",
+    title: "Shopping",
+    to: "/shopping",
   },
-]);
+];
+
+const upcompingData = [
+  {
+    img: "/img/music-avatar.jpg",
+    creator: "Danny Dwyer",
+    creatorlink: "/danny-dwyer",
+    musicname: "Disbeliever",
+    musiclink: "/disbeliever",
+    time: 9,
+  },
+  {
+    img: "/img/recent.jpg",
+    creator: "Reset Robot",
+    creatorlink: "/reset-robot",
+    musicname: "Orthosia",
+    musiclink: "/orthosia",
+    time: 9,
+  },
+  {
+    img: "/img/top-selling.jpg",
+    creator: "Goodnight Cody",
+    creatorlink: "/goodnight-cody",
+    musicname: "Rocket Dog Ru",
+    musiclink: "/rocket-dog-ru",
+    time: 11,
+  },
+];
+
+const creatorNavigate = (creator: string) => {
+  navigateTo("/user" + creator);
+};
+
+const musicNavigate = (creator: string, musiclink: string) => {
+  navigateTo(creator + musiclink);
+};
 
 useHead({
   meta: [{ content: title }],
@@ -65,59 +99,33 @@ useHead({
         <v-list variant="flat" subheader lines="two">
           <v-list-subheader>UPCOMING</v-list-subheader>
 
-          <v-list-item style="min-height: 0px">
+          <v-list-item
+            style="min-height: 0px"
+            v-for="(item, index) in upcompingData"
+            :key="index"
+          >
             <template v-slot:prepend>
               <v-img
-                :src="musicAvatar"
+                :src="item.img"
                 width="32"
                 height="32"
                 style="border-radius: 4px"
                 class="mr-2"
               ></v-img>
             </template>
-            <v-list-item-title>Disbeliever</v-list-item-title>
-            <v-list-item-subtitle>Danny Dwyer</v-list-item-subtitle>
+            <v-list-item-title
+              class="c-hover"
+              @click.stop="musicNavigate(item.creatorlink, item.musiclink)"
+              >{{ item.musicname }}</v-list-item-title
+            >
+            <v-list-item-subtitle
+              class="c-hover"
+              @click.stop="creatorNavigate(item.creatorlink)"
+              >{{ item.creator }}</v-list-item-subtitle
+            >
             <template v-slot:append>
               <v-icon style="margin: auto">
-                <v-list-item-subtitle>9h</v-list-item-subtitle>
-              </v-icon>
-            </template>
-          </v-list-item>
-
-          <v-list-item style="min-height: 0px">
-            <template v-slot:prepend>
-              <v-img
-                :src="musicAvatar"
-                width="32"
-                height="32"
-                style="border-radius: 4px"
-                class="mr-2"
-              ></v-img>
-            </template>
-            <v-list-item-title>Orthosia</v-list-item-title>
-            <v-list-item-subtitle>Reset Robot</v-list-item-subtitle>
-            <template v-slot:append>
-              <v-icon style="margin: auto">
-                <v-list-item-subtitle>9h</v-list-item-subtitle>
-              </v-icon>
-            </template>
-          </v-list-item>
-
-          <v-list-item style="min-height: 0px">
-            <template v-slot:prepend>
-              <v-img
-                :src="musicAvatar"
-                width="32"
-                height="32"
-                style="border-radius: 4px"
-                class="mr-2"
-              ></v-img>
-            </template>
-            <v-list-item-title>Rocket Dog Ru</v-list-item-title>
-            <v-list-item-subtitle>Goodnight Cody</v-list-item-subtitle>
-            <template v-slot:append>
-              <v-icon style="margin: auto">
-                <v-list-item-subtitle>11h</v-list-item-subtitle>
+                <v-list-item-subtitle>{{ item.time }}h</v-list-item-subtitle>
               </v-icon>
             </template>
           </v-list-item>
@@ -156,3 +164,8 @@ useHead({
     </v-app>
   </v-locale-provider>
 </template>
+<style>
+.c-hover {
+  cursor: pointer;
+}
+</style>

@@ -6,3 +6,4 @@ const creator = route.params.creator;
 
 router.push("/user/" + creator);
 </script>
+<template></template>

@@ -5,7 +5,7 @@ const headerImgUrl = "/img/music-detail-1.jpg";
 </script>
 <template>
   <div>
-    <LayoutsMusicHeader :headerImgUrl="headerImgUrl"></LayoutsMusicHeader>
+    <LayoutsUserHeader :headerImgUrl="headerImgUrl"></LayoutsUserHeader>
     <v-layout class="justify-center">
       <v-layout class="c-detail-content">
         <UserProfile :headerImgUrl="headerImgUrl"></UserProfile>

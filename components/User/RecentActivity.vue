@@ -54,5 +54,7 @@ const activities = [
 .c-avatar {
   border-radius: 4px;
   margin-right: 20px;
+  width: 64px;
+  height: 64px;
 }
 </style>

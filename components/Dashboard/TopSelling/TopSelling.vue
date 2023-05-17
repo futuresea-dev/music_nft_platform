@@ -1,9 +1,9 @@
 <script setup>
 import Title from "~/components/Dashboard/Title.vue";
-import RecentCard from "./RecentCard.vue";
+import TopSellingCard from "./TopSellingCard.vue";
 const data = [
   {
-    img: "/img/recent.jpg",
+    img: "/img/top-selling.jpg",
     creator: "Dessauer",
     musicname: "It Fuzzes And Condensates",
     time: "Ends in 21h",
@@ -17,7 +17,7 @@ const data = [
     ],
   },
   {
-    img: "/img/recent.jpg",
+    img: "/img/top-selling.jpg",
     creator: "billings",
     musicname: "all right",
     time: "Ends in 2d",
@@ -31,7 +31,7 @@ const data = [
     ],
   },
   {
-    img: "/img/recent.jpg",
+    img: "/img/top-selling.jpg",
     creator: "bloody white",
     musicname: "wonderboy",
     time: "Ends in 2d",
@@ -45,7 +45,7 @@ const data = [
     ],
   },
   {
-    img: "/img/recent.jpg",
+    img: "/img/top-selling.jpg",
     creator: "bloody white",
     musicname: "wonderboy",
     time: "Ends in 2d",
@@ -62,10 +62,10 @@ const data = [
 </script>
 <template>
   <v-container class="c-container">
-    <Title text="Recent Drops" seeAllLink="recent"></Title>
+    <Title text="Top Selling" seeAllLink="recent"></Title>
     <v-row>
       <v-col sm="3" v-for="(item, index) in data" :key="index">
-        <RecentCard
+        <TopSellingCard
           :img="item.img"
           :creator="item.creator"
           :musicname="item.musicname"
@@ -73,7 +73,7 @@ const data = [
           :musiclink="item.musiclink"
           :creatorlink="item.creatorlink"
           :mintedbyuser="item.mintedbyuser"
-        ></RecentCard>
+        ></TopSellingCard>
       </v-col>
     </v-row>
   </v-container>
