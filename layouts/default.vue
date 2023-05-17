@@ -2,7 +2,6 @@
 import { RouterView } from "vue-router";
 import Logo from "~/components/Logo.vue";
 
-const title = ref("Bitsong - Nuxt3 Typescript based Vuetify");
 const clipped = ref(false);
 const drawer = ref(true);
 const miniVariant = ref(false);
@@ -58,12 +57,6 @@ const creatorNavigate = (creator: string) => {
 const musicNavigate = (creator: string, musiclink: string) => {
   navigateTo(creator + musiclink);
 };
-
-useHead({
-  meta: [{ content: title }],
-  title: "Bitsong",
-  link: [{ rel: "icon", type: "image/x-icon", href: "/bitsong.svg" }],
-});
 </script>
 
 <template>

@@ -23,8 +23,9 @@ const recentProps = defineProps({
   creatorlink: {
     type: String,
   },
-  mintedbyuser: {
-    type: Array,
+  price: {
+    type: String,
+    required: true,
   },
 });
 const creatorNavigate = (creator) => {
@@ -108,14 +109,18 @@ const musicNavigate = (creator, musiclink) => {
           </v-layout>
         </div>
         <v-card-actions>
-          <div class="c-avatar">
-            <img
-              :src="recentProps.mintedbyuser[0].img"
-              alt="avatar"
-              class="c-avatar-img"
-            />
-          </div>
-          <div class="c-desc">{{ recentProps.mintedbyuser[0].name }}</div>
+          <v-layout class="px-3 align-center justify-space-between">
+            <div>{{ recentProps.price }} ETH</div>
+            <v-btn
+              text="Buy"
+              color="primary"
+              class="c-buy-btn"
+              variant="outline"
+              @click.stop="
+                musicNavigate(recentProps.creatorlink, recentProps.musiclink)
+              "
+            ></v-btn>
+          </v-layout>
         </v-card-actions>
       </v-card>
     </v-hover>
@@ -189,5 +194,8 @@ const musicNavigate = (creator, musiclink) => {
 }
 .show-none {
   display: none;
+}
+.c-buy-btn {
+  text-transform: none;
 }
 </style>

@@ -69,7 +69,9 @@ const musicNavigate = (creator, musiclink) => {
               {{ recentProps.creator }}
             </v-card-subtitle>
             <v-card-title
-              @click.stop="musicNavigate(recentProps.musiclink)"
+              @click.stop="
+                musicNavigate(recentProps.creatorlink, recentProps.musiclink)
+              "
               class="c-recent-card-title"
               >{{ recentProps.musicname }}</v-card-title
             >
