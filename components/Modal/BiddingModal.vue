@@ -1,6 +1,10 @@
 <script setup>
+import { ref } from "vue";
 const img = "/img/music-detail.jpg";
-const power = ref(78);
+const currentPrice = ref(0.005);
+const handleAction = () => {
+  console.log("== Place bid ==");
+};
 </script>
 <template>
   <v-card class="c-container">
@@ -13,38 +17,20 @@ const power = ref(78);
     </v-layout>
     <v-divider class="my-3"></v-divider>
     <v-layout class="justify-space-between">
-      <div class="text-h6 align-self-center">Mint Details</div>
-      <v-chip class="ma-2" color="pink" label text-color="white">
-        Sold Out
-      </v-chip>
+      <div class="text-subtitle-1">Auction Ends In</div>
+      <div class="text-body-1">{{ 7 }}h</div>
     </v-layout>
     <v-layout class="justify-space-between">
-      <div class="text-subtitle-1">Price</div>
-      <div>0.005ETH</div>
+      <div class="text-subtitle-1">Current Bid</div>
+      <div class="text-h6">{{ currentPrice.toFixed(2) }}ETH</div>
     </v-layout>
-    <v-layout class="justify-space-between">
-      <div class="text-subtitle-1">Collected</div>
-      <div>5000 / 5589</div>
-    </v-layout>
-    <v-progress-linear
-      v-model="power"
-      color="pink"
-      height="25"
-      rounded="5"
-      class="my-5"
-    ></v-progress-linear>
     <v-divider class="my-3"></v-divider>
-    <v-layout class="justify-space-between">
-      <div class="text-subtitle-1">Total Raised</div>
-      <div class="text-h5">7.045 ETH</div>
-    </v-layout>
     <v-card-actions>
-      <v-btn
-        append-icon="mdi-bell"
-        text="Buy on Sound Market"
-        class="c-detail-action-btn"
-      >
-      </v-btn>
+      <button-card-sign-btn
+        @handle-action="handleAction"
+        text="Place bid"
+      ></button-card-sign-btn>
+      <!-- <v-btn text="Sign In" class="c-detail-action-btn"> </v-btn> -->
     </v-card-actions>
   </v-card>
 </template>
@@ -53,6 +39,8 @@ const power = ref(78);
   padding: 20px;
   min-width: 400px;
   height: fit-content;
+  width: 400px;
+  margin-bottom: 20px;
 }
 .c-detail-card-avatar {
   width: 64px;

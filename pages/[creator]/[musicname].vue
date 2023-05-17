@@ -52,7 +52,11 @@ const headerImgUrl = "/img/music-detail.jpg";
             </v-window>
           </div>
         </div>
-        <modal-buy-modal></modal-buy-modal>
+        <div>
+          <ModalSoldOut></ModalSoldOut>
+          <modal-purchase-modal></modal-purchase-modal>
+          <modal-bidding-modal></modal-bidding-modal>
+        </div>
       </v-layout>
     </v-layout>
     <Footer></Footer>
