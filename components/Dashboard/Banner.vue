@@ -1,6 +1,48 @@
 <script setup>
 const imgUrl = "/img/banner-";
-const slides = ref(["First", "Second", "Third", "Forth"]);
+const slides = [
+  {
+    img: "/img/banner-1.jpg",
+    creator: "Dessauer",
+    musicname: "It Fuzzes And Condensates",
+    mints: 66,
+    musiclink: "/it-fuzzes-and-condensates",
+    creatorlink: "/dessauer",
+  },
+  {
+    img: "/img/banner-2.jpg",
+    creator: "billings",
+    musicname: "all right",
+    mints: 100,
+    musiclink: "/all-right",
+    creatorlink: "/billings",
+  },
+  {
+    img: "/img/banner-3.jpg",
+    creator: "bloody white",
+    musicname: "wonderboy",
+    mints: 15,
+    musiclink: "/wonderboy",
+    creatorlink: "/bloody-white",
+  },
+  {
+    img: "/img/banner-4.jpg",
+    creator: "Sara Phillips",
+    musicname: "everybody knows",
+    mints: 90,
+    musiclink: "/everybody-knows",
+    creatorlink: "/sara-phillips",
+  },
+];
+const items = ref(["first", "second", "third", "forth"]);
+
+const creatorNavigate = (creator) => {
+  navigateTo("/user" + creator);
+};
+
+const musicNavigate = (creator, musiclink) => {
+  navigateTo(creator + musiclink);
+};
 </script>
 
 <template>
@@ -11,7 +53,7 @@ const slides = ref(["First", "Second", "Third", "Forth"]);
       hide-delimiter-background
       show-arrows="hover"
     >
-      <v-carousel-item v-for="(slide, i) in slides" :key="i">
+      <v-carousel-item v-for="(item, i) in items" :key="i">
         <div class="c-carousel-section">
           <div class="c-carousel-container">
             <img
@@ -19,6 +61,34 @@ const slides = ref(["First", "Second", "Third", "Forth"]);
               alt="Carousel"
               class="c-carousel-img"
             />
+          </div>
+          <div class="c-carousel-text">
+            <v-layout class="align-center">
+              <v-btn
+                color="white"
+                rounded="4"
+                size="60"
+                class="c-play-btn"
+                prepend-icon="mdi-play"
+              >
+              </v-btn>
+              <div class="ml-5">
+                <div
+                  class="text-h3 c-hover"
+                  @click="
+                    musicNavigate(slides[i].creatorlink, slides[i].musiclink)
+                  "
+                >
+                  {{ slides[i].musicname }}
+                </div>
+                <div
+                  @click="creatorNavigate(slides[i].creatorlink)"
+                  class="c-hover"
+                >
+                  {{ slides[i].creator }} | {{ slides[i].mints }} Mints
+                </div>
+              </div>
+            </v-layout>
           </div>
         </div>
       </v-carousel-item>
@@ -58,5 +128,11 @@ const slides = ref(["First", "Second", "Third", "Forth"]);
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.c-carousel-text {
+  margin-left: 50px;
+}
+.c-play-btn {
+  font-size: 30px;
 }
 </style>

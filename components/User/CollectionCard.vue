@@ -75,7 +75,7 @@ const musicNavigate = (creator, musiclink) => {
             >
           </div>
           <v-layout class="justify-end" v-if="isHovering">
-            <v-menu>
+            <!-- <v-menu>
               <template v-slot:activator="{ props }">
                 <v-btn
                   variant="text"
@@ -94,7 +94,7 @@ const musicNavigate = (creator, musiclink) => {
                   <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
               </v-list>
-            </v-menu>
+            </v-menu> -->
             <v-btn
               variant="text"
               icon="mdi-heart-outline"

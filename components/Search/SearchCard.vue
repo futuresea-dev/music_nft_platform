@@ -27,6 +27,13 @@ const recentProps = defineProps({
     type: String,
     required: true,
   },
+  toggle: {
+    type: Function,
+    required: true,
+  },
+  isSelected: {
+    type: Boolean,
+  },
 });
 const creatorNavigate = (creator) => {
   navigateTo("/user" + creator);
@@ -48,17 +55,34 @@ const musicNavigate = (creator, musiclink) => {
             inline
           ></v-badge>
           <v-sheet>
-            <NuxtLink to="/groggyjones/jump-ship">
+            <NuxtLink :to="recentProps.creatorlink + recentProps.musiclink">
               <img :src="recentProps.img" alt="recent" class="c-recent-img" />
             </NuxtLink>
           </v-sheet>
           <div class="c-gradient"></div>
+          <v-icon
+            :class="recentProps.isSelected ? 'c-checked-btn' : 'show-none'"
+            >mdi-check-bold</v-icon
+          >
+          <v-btn
+            color="Black"
+            rounded="4"
+            size="60"
+            :class="isHovering ? 'c-add-cart-btn' : 'show-none'"
+            prepend-icon="mdi-plus"
+            variant="flat"
+            @click.stop="
+              typeof recentProps.toggle === 'function' && recentProps.toggle()
+            "
+          >
+          </v-btn>
           <v-btn
             color="white"
             rounded="4"
             size="60"
             :class="isHovering ? 'c-play-btn' : 'show-none'"
             prepend-icon="mdi-play"
+            variant="flat"
           >
           </v-btn>
         </div>
@@ -78,10 +102,9 @@ const musicNavigate = (creator, musiclink) => {
             >
           </div>
           <v-layout class="justify-end" v-if="isHovering">
-            <v-menu>
+            <!-- <v-menu>
               <template v-slot:activator="{ props }">
                 <v-btn
-                  variant="text"
                   icon="mdi-dots-horizontal"
                   v-bind="props"
                   width="30"
@@ -97,11 +120,10 @@ const musicNavigate = (creator, musiclink) => {
                   <v-list-item-title>{{ item.title }}</v-list-item-title>
                 </v-list-item>
               </v-list>
-            </v-menu>
+            </v-menu> -->
             <v-btn
               variant="text"
               icon="mdi-heart-outline"
-              v-bind="props"
               width="30"
               height="30"
               class="ma-2"
@@ -113,9 +135,9 @@ const musicNavigate = (creator, musiclink) => {
             <div>{{ recentProps.price }} ETH</div>
             <v-btn
               text="Buy"
+              variant="text"
               color="primary"
               class="c-buy-btn"
-              variant="outline"
               @click.stop="
                 musicNavigate(recentProps.creatorlink, recentProps.musiclink)
               "
@@ -197,5 +219,17 @@ const musicNavigate = (creator, musiclink) => {
 }
 .c-buy-btn {
   text-transform: none;
+}
+.c-add-cart-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  transform: translate(-50%, -50%);
+}
+.c-checked-btn {
+  position: absolute;
+  top: 40px;
+  right: 20px;
 }
 </style>

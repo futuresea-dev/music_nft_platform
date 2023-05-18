@@ -5,10 +5,6 @@ const items = [
     to: "/",
   },
   {
-    title: "Search",
-    to: "/search",
-  },
-  {
     title: "Shopping",
     to: "/shopping",
   },

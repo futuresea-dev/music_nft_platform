@@ -12,11 +12,6 @@ const items = [
     to: "/",
   },
   {
-    icon: "mdi-chart-bubble",
-    title: "Search",
-    to: "/search",
-  },
-  {
     icon: "mdi-cart",
     title: "Shopping",
     to: "/shopping",
