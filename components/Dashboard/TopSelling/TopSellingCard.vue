@@ -64,6 +64,7 @@ const musicNavigate = (creator, musiclink) => {
         <div class="d-flex justify-space-between">
           <div>
             <v-card-subtitle
+              class="c-hover"
               @click.stop="creatorNavigate(recentProps.creatorlink)"
             >
               {{ recentProps.creator }}
@@ -72,7 +73,7 @@ const musicNavigate = (creator, musiclink) => {
               @click.stop="
                 musicNavigate(recentProps.creatorlink, recentProps.musiclink)
               "
-              class="c-recent-card-title"
+              class="c-recent-card-title c-hover"
               >{{ recentProps.musicname }}</v-card-title
             >
           </div>
@@ -127,7 +128,6 @@ const musicNavigate = (creator, musiclink) => {
 <style scoped>
 .c-card {
   background-color: black;
-  color: white;
   border-radius: 10px;
   width: 100%;
   margin: 0px 10px;

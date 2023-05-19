@@ -57,7 +57,7 @@ const model = ref(null);
 
 <template>
   <v-container class="c-container">
-    <Title text="Upcoming Drops" seeAllLink="/upcoming"></Title>
+    <Title text="Upcoming Drops" seeAllLink="/shopping"></Title>
     <v-slide-group v-model="model" show-arrows class="c-upcoming-sliders">
       <v-slide-group-item
         v-for="(item, index) in upcomingData"

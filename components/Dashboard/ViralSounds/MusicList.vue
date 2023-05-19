@@ -48,13 +48,13 @@ const musicNavigate = (creatorlink: string, musiclink: string) => {
         </div>
         <div>
           <div
-            class="c-small-text"
+            class="c-small-text c-hover"
             @click.stop="creatorNavigate(props.creatorlink)"
           >
             {{ props.creator }}
           </div>
           <div
-            class="c-title-text"
+            class="c-title-text c-hover"
             @click.stop="musicNavigate(props.creatorlink, props.musiclink)"
           >
             {{ props.title }}
@@ -94,12 +94,10 @@ const musicNavigate = (creatorlink: string, musiclink: string) => {
   font-size: 18px;
   line-height: 22px;
   color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity));
-  cursor: pointer;
 }
 .c-small-text {
   font-size: 14px;
   line-height: 18px;
   color: #737373;
-  cursor: pointer;
 }
 </style>

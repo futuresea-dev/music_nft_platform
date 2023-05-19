@@ -59,12 +59,13 @@ const musicNavigate = (creator, musiclink) => {
         <div class="d-flex justify-space-between">
           <div>
             <v-card-subtitle
+              class="c-hover"
               @click.stop="creatorNavigate(upcomingProps.creatorlink)"
             >
               {{ upcomingProps.creator }}
             </v-card-subtitle>
             <v-card-title
-              class="c-upcoming-title"
+              class="c-upcoming-title c-hover"
               @click.stop="
                 musicNavigate(
                   upcomingProps.creatorlink,

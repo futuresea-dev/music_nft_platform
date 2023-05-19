@@ -7,7 +7,7 @@ import MusicList from "~/components/Dashboard/ViralSounds/MusicList.vue";
     <Title
       text="Viral Sounds This Week"
       icon="mdi-camera"
-      seeAllLink="/charts"
+      seeAllLink="/shopping"
     ></Title>
     <v-row>
       <v-col sm="6">

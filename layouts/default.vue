@@ -156,4 +156,8 @@ const musicNavigate = (creator: string, musiclink: string) => {
 .c-hover {
   cursor: pointer;
 }
+
+.c-hover:hover {
+  color: white;
+}
 </style>

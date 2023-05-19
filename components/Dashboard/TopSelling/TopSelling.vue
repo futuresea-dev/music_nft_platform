@@ -62,7 +62,7 @@ const data = [
 </script>
 <template>
   <v-container class="c-container">
-    <Title text="Top Selling" seeAllLink="recent"></Title>
+    <Title text="Top Selling" seeAllLink="/shopping"></Title>
     <v-row>
       <v-col sm="3" v-for="(item, index) in data" :key="index">
         <TopSellingCard

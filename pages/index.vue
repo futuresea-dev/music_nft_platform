@@ -18,7 +18,13 @@ import Footer from "~/components/layouts/Footer.vue";
       <TopSelling></TopSelling>
       <RecentDrops></RecentDrops>
       <v-spacer class="text-center">
-        <v-btn elevation="2" height="48" width="200" variant="outlined"
+        <v-btn
+          elevation="2"
+          height="48"
+          width="200"
+          variant="outlined"
+          to="/shopping"
+          class="c-hover"
           >See All</v-btn
         >
       </v-spacer>

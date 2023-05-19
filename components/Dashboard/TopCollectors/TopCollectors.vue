@@ -37,10 +37,7 @@ const data = ref([
 </script>
 <template>
   <v-container class="c-container">
-    <Title
-      text="Top Collectors This Week"
-      seeAllLink="/charts/top/collectors/7d/mints"
-    ></Title>
+    <Title text="Top Collectors This Week" seeAllLink="/shopping"></Title>
     <v-row class="ma-2">
       <v-col sm="4" v-for="(item, index) in data" :key="index">
         <Collector
